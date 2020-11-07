@@ -23,9 +23,31 @@ d3.json("samples.json").then((importedData) => {
         })
 
         function init() {
+
+            var topTen = samples[0].otu_ids.slice(0,10)
+            var otuCultures = []
+            otuCultures.push("OTU " + topTen[0])
+            otuCultures.push("OTU " + topTen[1])
+            otuCultures.push("OTU " + topTen[2])
+            otuCultures.push("OTU " + topTen[3])
+            otuCultures.push("OTU " + topTen[4])
+            otuCultures.push("OTU " + topTen[5])
+            otuCultures.push("OTU " + topTen[6])
+            otuCultures.push("OTU " + topTen[7])
+            otuCultures.push("OTU " + topTen[8])
+            otuCultures.push("OTU " + topTen[9])
+
+            // Loop would not update otuCultures array outside of loop
+            // for (j = 0; j > topTen.length; j++) {
+            //     otuCultures.push("OTU" + topTen[j])
+            //     console.log(otuCultures)
+            // }
+            
+            console.log(otuCultures)
+
             var data = [{
                 x: samples[0].sample_values.slice(0,10),
-                y: samples[0].otu_ids.slice(0,10),
+                y: otuCultures,
                 hovertext: samples[0].otu_labels.slice(0,10),
                 orientation: "h",
                 type: "bar"
@@ -86,9 +108,23 @@ d3.json("samples.json").then((importedData) => {
             var hover = [];
           
             for (var i = 0; i < names.length; i++) { 
+
+                var topTen = samples[i].otu_ids.slice(0,10)
+                var otuCultures = []
+                otuCultures.push("OTU " + topTen[0])
+                otuCultures.push("OTU " + topTen[1])
+                otuCultures.push("OTU " + topTen[2])
+                otuCultures.push("OTU " + topTen[3])
+                otuCultures.push("OTU " + topTen[4])
+                otuCultures.push("OTU " + topTen[5])
+                otuCultures.push("OTU " + topTen[6])
+                otuCultures.push("OTU " + topTen[7])
+                otuCultures.push("OTU " + topTen[8])
+                otuCultures.push("OTU " + topTen[9])
+
                 if (dataset === names[i]) {
                     x = samples[i].sample_values.slice(0,10),
-                    y = samples[i].otu_ids.slice(0,10),
+                    y = otuCultures,
                     hover = samples[i].otu_labels.slice(0,10),
                     x1 = samples[i].otu_ids,
                     y1 = samples[i].sample_values,
