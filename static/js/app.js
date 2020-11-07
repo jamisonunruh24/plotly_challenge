@@ -65,8 +65,10 @@ d3.json("samples.json").then((importedData) => {
                 x: samples[0].otu_ids,
                 y: samples[0].sample_values,
                 mode: "markers",
+                marker: {
                 size: samples[0].sample_values,
                 color: samples[0].otu_ids,
+                },
                 text: samples[0].otu_labels,
                 type: "scatter"
             }
