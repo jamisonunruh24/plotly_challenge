@@ -21,7 +21,7 @@ d3.json("samples.json").then((importedData) => {
         .text(function(d) {
             return d
         })
-
+        // function to displace the first subjects data, will be overwriten when another subject is selected
         function init() {
 
             var topTen = samples[0].otu_ids.slice(0,10)
@@ -108,7 +108,7 @@ d3.json("samples.json").then((importedData) => {
             var x = [];
             var y = [];
             var hover = [];
-          
+            // Loop for updating the data when the subject ID is changed in the drop down menu
             for (var i = 0; i < names.length; i++) { 
 
                 var topTen = samples[i].otu_ids.slice(0,10)
